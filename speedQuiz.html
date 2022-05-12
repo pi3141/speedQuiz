@@ -170,6 +170,8 @@ ol > li::marker {font-weight: bold;color:var(--secondColor)}
 <script>
 slideNr=1;
 document.addEventListener('keydown', processKeyPress);
+document.addEventListener('click', nextSlide);
+document.addEventListener('contextmenu', function(e){e.preventDefault();previousSlide();});
 window.addEventListener('resize', adaptTextSize);
 interval='';
 document.getElementById('questionsD').innerHTML=QUESTIONSD;
@@ -179,7 +181,6 @@ document.getElementById('bareme').innerHTML="Note :   / "+ BAREME;
 document.title = TITLE;
 
 function processKeyPress(e) {
-  console.log(e.code);
   switch(e.code) {
     case 'ArrowRight':
     case 'Space':
@@ -193,7 +194,6 @@ function processKeyPress(e) {
 
 function nextSlide(){
     if(document.querySelector('.slide-'+ (slideNr+1) )){
-        console.log('nextSlide');
         document.querySelector('.slide-'+slideNr).style.display = 'none';
         theNextSlide =  document.querySelector('.slide-'+(slideNr+1));
         theNextSlide.style.display = 'block';
@@ -210,7 +210,6 @@ function nextSlide(){
 }
 
 function startTimer(){
-    console.log('timer start');
     var timerBar = document.createElement('div');
     timerBar.id='timerBar';
     timerBar.classList.add('timerBar');
@@ -224,13 +223,11 @@ function startTimer(){
 }
 
 function stopTimer(){
-    console.log('timer ended');
     nextSlide();
 }
 
 function previousSlide(){
     if(slideNr > 1){
-        console.log('previousSlide');
         document.querySelector('.slide-'+slideNr).style.display = 'none';
         thePreviousSlide =  document.querySelector('.slide-'+(slideNr-1));
         thePreviousSlide.style.display = 'block';
@@ -250,7 +247,6 @@ function destroyTimer() {
     if (document.getElementById('timerBar')){
         document.getElementById('timerBar').remove();
         clearInterval(interval);
-        console.log('timer destroyed');
     }
 }
 
@@ -263,7 +259,6 @@ function adaptTextSize() {
     content=document.getElementsByClassName("dynamicText");
     content[0].style.fontSize = '54pt';
     content[1].style.fontSize = '54pt';
-    console.log(content[0].style.fontSize)
     while(document.documentElement.scrollHeight > document.documentElement.offsetHeight || content[0].style.fontSize > 0)
     {
         content[0].style.fontSize = parseInt(content[0].style.fontSize) - 2 + 'pt';
