@@ -8,3 +8,7 @@ Quick quiz to display to video projector in classroom. All fits in a single html
 * No internet connection needed
 * Walk to slides with keyboard arrows.
 * Timerbar to show remaining time.
+
+## TODO
+
+* One html quiz file, each quiz will be an url shortcut with post parameters
