@@ -1,0 +1,56 @@
+<!doctype html>
+<script>
+
+////////////////////////////////////////////////
+// VARIABLES ET PARAMÈTRES
+// Modifier cette partie pour faire votre évaluation
+
+// Chemin vers speedquiz
+SPEEDQUIZ_PATH="../../AUTRES/apps/speedQuiz_0.3.html"
+// Numéro de chapitre (sera affiché sur la 1ère slide)
+CHAP=5
+
+// Barème qui sera affiché sur la copie (1ère slide)
+BAREME=4
+
+// Durée en s (1' par question)
+TIMERDURATION=250;
+
+//Questions pour ceux qui sont à gauche de la table. Chaque ligne est une nouvelle question. Il est possible d'utiliser du HTML, des images, …
+QUESTIONSG=`<li>
+Donner l'unité de l'énergie et son symbole.</li><li>
+Donner un exemple d'un objet possédant de l'énergie cinétique.</li><li>
+Dans la formule de l'énergie cinétique, quelle est l'unité de la vitesse ?</li><li>
+Une goutte d'eau tombe du ciel, comment évolue son énergie potentielle ?</li>`
+
+//Questions pour ceux qui sont à droite de la table.
+QUESTIONSD=`<li>
+Donner un exemple d'un objet possédant de l'énergie potentielle.</li><li>
+Dans la formule de l'énergie cinétique, en quelle unité doit être exprimée la masse ?</li><li>
+Comment passer d'une vitesse en km/h à m/s ?</li><li>
+Une voiture démarre au feu vert, comment évolue son énergie cinétique ?</li>`
+//
+// FIN DE LA PARTIE MODIFIABLE
+////////////////////////////////////////////////////////////////////
+
+function init() {
+  document.getElementById('FORM').action = SPEEDQUIZ_PATH;
+  const params = ['CHAP','BAREME','TIMERDURATION','QUESTIONSG','QUESTIONSD'];
+
+  for (const e of params) {
+    console.log(this[e]);
+    document.getElementById(e).value = this[e];
+  }
+  document.getElementById('FORM').submit();
+}
+
+window.onload = init;
+</script>
+<body><form id="FORM" action="" method="get">
+<input name="a" type="hidden" value="܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁܁">
+<input id="CHAP" name="CHAP" type="hidden" value="">
+<input id="BAREME" name="BAREME" type="hidden" value="">
+<input id="TIMERDURATION" name="TIMERDURATION" type="hidden" value="">
+<input id="QUESTIONSG" name="QUESTIONSG" type="hidden" value="">
+<input id="QUESTIONSD" name="QUESTIONSD" type="hidden" value="">
+</form></body>
