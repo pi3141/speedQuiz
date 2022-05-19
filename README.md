@@ -9,6 +9,11 @@ Quick quiz to display to video projector in classroom. All fits in a single html
 * Walk to slides with keyboard arrows.
 * Timerbar to show remaining time.
 
-## TODO
+## Standalone version
 
-* One html quiz file, each quiz will be an url shortcut with post parameters
+* only one html file for each quiz
+
+## Normal version
+
+* one html file with the app
+* one html file with data (questions, …)
