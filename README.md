@@ -1,6 +1,8 @@
 # speedQuiz
 Quick quiz to display to video projector in classroom. All fits in a single html file.
 
+[demo](http://pgazaniol.free.fr/SITE/speedQuiz.html)
+
 ## Features
 
 * Questions in html with images or any html element
