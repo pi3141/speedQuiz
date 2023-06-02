@@ -1,7 +1,7 @@
 # speedQuiz
 Quick quiz to display to video projector in classroom. All fits in a single html file.
 
-[demo](https://pi3141.github.io/speedQuiz_standAlone.html)
+# [demo](https://pi3141.github.io/speedQuiz_standAlone.html)
 
 ## Features
 
